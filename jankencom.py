@@ -4,21 +4,13 @@
 import sys
 import random
 
-user_win = 0
-
-
-dic = {"1":"グー","2":"チョキ","3":"パー"}
-
-print (u"じゃーんけーん")
-print (u"1=グー　2=チョキ　3=パー　を入力")
-user = input('>>>  ')
-
-try:
+def janken(dic, user):
+    print("ここ0")
     user_choice = dic[user]
-
+    print("ここ1")
     choice_list = ['1','2','3']
     pc = dic[random.choice(choice_list)]
-
+    print("ここ1")
     draw = 'DRAW'
     win = 'You Win!!'
     lose = 'You lose!!'
@@ -44,11 +36,25 @@ try:
             else:
                 judge = lose
 
-    if judge == 'You Win!!':
-        user_win += 1
-    
     print(u"あなた選んだのは %s"%user_choice)
     print(u"コンピュータが選んだのは %s"%pc)
     print(u"結果は%s"%judge)
-except:
-    print(u"1か２か３を入力してください。")
+
+    return judge
+
+
+user_win = 0
+
+
+dic = {"1":"グー","2":"チョキ","3":"パー"}
+
+print (u"じゃーんけーん")
+print (u"1=グー　2=チョキ　3=パー　を入力")
+user = input('>>>  ')
+
+#try:
+result = janken(dic, user)
+if result == 'You Win!!':
+    user_win += 1
+#except:
+#    print(u"1か２か３を入力してください。")
