@@ -52,3 +52,6 @@ try:
     print(u"結果は%s"%judge)
 except:
     print(u"1か２か３を入力してください。")
+
+print(u"\n\nあなたの勝利回数: %s回"%user_win)
+
