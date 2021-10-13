@@ -4,6 +4,9 @@
 import sys
 import random
 
+user_win = 0
+
+
 dic = {"1":"グー","2":"チョキ","3":"パー"}
 
 print (u"じゃーんけーん")
@@ -12,14 +15,14 @@ user = input('>>>  ')
 
 try:
     user_choice = dic[user]
-    
+
     choice_list = ['1','2','3']
     pc = dic[random.choice(choice_list)]
-    
+
     draw = 'DRAW'
     win = 'You Win!!'
     lose = 'You lose!!'
-    
+
     if user_choice == pc:
         judge = draw
     else:
@@ -28,18 +31,21 @@ try:
                 judge = win
             else:
                 judge = lose
-                
+
         elif user_choice == "チョキ":
             if pc == "パー":
                 judge = win
             else:
                 judge = lose
-                
+
         else:
             if pc == u"グー":
                 judge = win
             else:
                 judge = lose
+
+    if judge == 'You Win!!':
+        user_win += 1
     
     print(u"あなた選んだのは %s"%user_choice)
     print(u"コンピュータが選んだのは %s"%pc)
