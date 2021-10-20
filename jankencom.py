@@ -55,3 +55,6 @@ for i in range(3):
             user_win += 1
     except:
         print(u"1か２か３を入力してください。")
+
+print(u"\n\nあなたの勝利回数: %s回"%user_win)
+
